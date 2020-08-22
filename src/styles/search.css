@@ -1,0 +1,70 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#search {
+    height: 40px;
+    width: 40vw;
+    margin-bottom: 6vh;
+    margin-right: 1.5vw;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#search::-webkit-input-placeholder {
+    font-size: 0.666rem;
+    color: grey;
+    font-weight: 400;
+}
+
+.search-btn {
+    width: 90px;
+    background-color: rgb(70, 134, 172);
+    border-color: rgb(66, 134, 173);
+    border-radius: 12px;
+}
+
+@media only screen and (max-width: 575px) {
+    #search {
+        width: 53vw;
+    }
+    .search-btn {
+        width: 27vw;
+    }
+}
+
+.search-list {
+    min-height: 52vh;
+}
+
+.search-choice {
+    width:200px;
+    margin-bottom: 6vh;
+    background-color: rgb(173, 244, 247);
+    cursor: pointer;
+}
+
+.search-choice:hover, .search-choice:focus, .search-choice:active {
+    background-color: rgb(230, 232, 233) !important;
+    transform: scale(1.01);
+}
+
+.no-search {
+    text-align: center;
+    color: white;
+    font-size: large;
+    animation-name: fading;
+    animation-duration: 10s;
+}
+
+@keyframes fading {
+    from {color: white}
+    to {color: red;}
+}

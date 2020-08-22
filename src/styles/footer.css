@@ -1,0 +1,28 @@
+.footer{
+    background-color: rgb(247, 228, 160);
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.foot-links{
+    margin-right: 1.5vw;
+}
+
+.logo {
+    color: red;
+}
+
+.foot-scroll{
+    font-size: 1rem;
+    margin-left: 98vw;
+    margin-right: 100vw;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
+
+.foot-scroll:focus, .foot-scroll:hover{
+    text-decoration: underline;
+}

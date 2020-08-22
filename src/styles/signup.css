@@ -1,0 +1,70 @@
+.signup-background {
+    background-image: url('../shared/user-bg.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 650px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 6vh;
+    width: min(92vw,1000px);
+    height: 450px;
+    background-image: linear-gradient(to right, rgba(199, 228, 161, 0.4), rgb(95,244,211),rgba(130, 220, 231, 0.95));
+}
+@media only screen and (max-width: 575px) {
+    .signup-form {
+        height: 650px;
+        padding-right: 5vw;
+        padding-left: 5vw;
+    }
+    .signup-background {
+        height: 860px;
+    }
+}
+
+.signup-btn {
+    margin-top: 3vh;
+    width: max(100px,20vw);
+    background-color: rgb(70, 134, 172);
+    border-color: rgb(66, 134, 173);
+    border-radius: 20px;
+    color: whitesmoke ;
+}
+
+.signup-logo {
+    margin-top: 12vh;
+}
+
+.signup-logo-text {
+    display: flex;
+    width: 220px;
+    height: 40px;
+    border-radius: 16px;
+    background-color: violet;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: large;
+    color: rgb(75, 54, 75);
+    cursor: default;
+    animation-name: logo;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+@keyframes logo {
+    0% {background-color: violet;}
+    50% {
+        background-color: rgb(216, 196, 211);
+        transform: scale(1.15);
+        border-radius: 5px;
+    }
+    100% {background-color: violet;}
+}
+
+.error {
+    color: red;
+}

@@ -1,0 +1,22 @@
+.play {
+    margin-top: 12vh;
+    margin: auto;
+}
+
+.back-btn {
+    display: flex;
+    margin-top: 4vh;
+    margin-left: 2vw;
+}
+
+.video {
+    margin-bottom: 5vh;
+    max-width: 90vw;
+    margin-left: 6vw;
+}
+
+@media only screen and (min-width: 900px) {
+    .video {
+        margin-left: 12vw;
+    }
+}
