@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Button} from 'reactstrap';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class VideoCard extends Component {
 
@@ -12,19 +12,20 @@ class VideoCard extends Component {
             username: JSON.parse(localStorage.getItem('currentUser')).username,
         }
     }
-    
+
     render() {
 
         const display = (() => {
             const user = JSON.parse(localStorage.getItem('currentUser'));
             const username = user.username;
-            if( username !== 'guest') {
-                return(
+            if (username !== 'guest') {
+                return (
                     <span onClick={() => this.props.handleIcon(this.props.index)} className={`fa ${this.props.icon} fav`}></span>
                 )
             }
-            else return <span></span>
+            else return <div></div>
         })
+
         return (
             <div className="row card-element" key={this.props.index}>
                 <div className="col-lg-5 offset-lg-1">

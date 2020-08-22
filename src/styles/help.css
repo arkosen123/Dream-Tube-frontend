@@ -1,0 +1,47 @@
+.help-info {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5vw;
+    padding: 7vw;
+    background-color: rgb(246, 247, 188);
+    border: 2px solid rgb(210, 248, 38);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.help-heading {
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+    color: brown;
+    margin-bottom: 7vh;
+    cursor: default;
+}
+
+.help-topic {
+    margin-bottom: 5vh;
+}
+
+li {
+    margin-top: 2vh;
+    list-style-type: square;
+}
+
+h3 {
+    letter-spacing: 0.04rem;
+    margin: 2vh 2vw;
+    display: inline-block;
+    color: rgb(230, 167, 84);
+}
+
+.help-main {
+    color: rgb(42, 92, 92);
+}
+
+.help-demo {
+    color: rgb(133, 173, 22)
+}
+
+.help-instru {
+    display: inline-block;
+    margin-left: 1vw;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import baseUrl from '../shared/baseUrl';
 import VideoCard from './videoCard';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import history from '../history';
 import Header from './header';
 import { Row, Col, Label, Button, FormGroup, Input } from 'reactstrap';
@@ -401,6 +401,7 @@ class Profile extends Component {
                     {user()}
                     <Button className="profile-btn btn-warning" onClick={() => this.getFavourites()} >Favourites</Button>
                     <div className="fav-videos">{list()}</div>
+                    <Link className="profile-link" to='/help'><Button className="profile-btn btn-warning" >Know More</Button></Link>
                     <Button className="profile-btn btn-warning" onClick={() => this.editUser()} >Edit User Details</Button>
                     {edit()}
                     {openStateView()}

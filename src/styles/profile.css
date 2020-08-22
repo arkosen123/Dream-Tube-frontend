@@ -71,3 +71,13 @@
     align-items: center;
     flex-direction: column;
 }
+
+.profile-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-link:hover {
+    text-decoration: none;
+}

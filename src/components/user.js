@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import history from '../history';
 import baseUrl from '../shared/baseUrl';
 
@@ -83,7 +83,7 @@ class User extends Component {
                         <Button className="user-button" onClick={() => this.handleGuest()}>Login as Guest</Button>
                     </div>
                     <div className="user-help">
-                        <Button className="user-button user-button-help" onClick={() => this.handleHelp()}>Know More</Button>
+                        <Link to='/help'><Button className="user-button user-button-help" >Know More</Button></Link>
                     </div>
                 </div>
             </div>

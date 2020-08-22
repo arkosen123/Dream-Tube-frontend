@@ -1,68 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## You just landed up to a new type of YouTube which is built on React, Express and Mongodb Server
 
-## Available Scripts
+So the app works almost like the Youtube having features like playing videos, downloading videos in different formats and many more. So let me give you the breif idea of how this website works.
 
-In the project directory, you can run:
+The first think you need to do is just Signup and Login to get to the home page of our application.Without logged in you can't get to the different pages of the application. But hold on you may also choose to not sign and enter as a Guest. Though, much of the operations are kept restricted for a guest.
 
-### `npm start`
+So now I hope you are logged in. In the home page at the top there is a Search bar where you can choose to type some Keyword or the PlayListId(there a Select menu to choose) to search for videos.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then once you press the "Search" button, top 10 search results will pop-up in the screen. The Thumbnail and Title for the video will be shown. There will be 4 buttons corresponding to each video. There is also a provision of save some videos as favourites.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The first two buttons are for downloading(video in .mp4 and audio in .mp3 respectively) , the next one will be for playing the video and last one for the details to the Video. Don't miss to explore them all.
 
-### `npm test`
+After that you may look for different buttons in the Navigation Bar. The Trending section shows you the videos which are in YouTube's trending for the Country Code you have signed up with. If you are logged in as Guest, your Country Code is kep IN.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Profile section will contains different sections like signup information, the list of your Favourite videos, provision for your edit different details and even delete your existing Account.
 
-### `npm run build`
+There is also a Logout button which will destroy your session and you will need to login again. Please make sure you do not clear cache during your existing session, it may delete the localStorage that this app is using.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Another interesting thing is that if you forget your password, you can easily Reset it back in very simple steps, you just need to enter your Username. One of the drawback of these application is that you are not given access to download some non-downloaded videos of YouTube.

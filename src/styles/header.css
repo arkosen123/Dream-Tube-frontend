@@ -21,6 +21,7 @@ html, body {
     height: 42px;
     width: 90px;
     margin-right: 4vw;
+    margin-top: 15px;
 }
 
 .logout-btn:hover, .logout-btn:focus, .logout-btn:active {
