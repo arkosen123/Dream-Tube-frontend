@@ -1,4 +1,0 @@
-
-const user = JSON.parse(localStorage.getItem('currentUser'));
-const username = user.username;
-<p className="card-text">{this.props.item.snippet.channelTitle}<small className="text-muted px-2">{this.props.item.snippet.description}</small></p>
