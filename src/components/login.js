@@ -3,6 +3,7 @@ import baseUrl from '../shared/baseUrl';
 import { Row, Col, Label, Button } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Redirect } from 'react-router-dom';
+import history from '../history';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => (!(required(val))) || (!(val) || (val.length <= len));
@@ -14,12 +15,24 @@ class Login extends Component {
         this.state = {
             redirect: null,
             error: false,
+            hide: "password",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetPass = this.resetPass.bind(this);
+        this.toggleHide = this.toggleHide.bind(this);
+    }
+
+    resetPass() {
+        history.push('/user/login');
+        this.setState({ redirect: '/reset' })
+    }
+
+    toggleHide() {
+        if(this.state.hide === "password") this.setState({ hide: "text"});
+        else this.setState({ hide: "password"}); 
     }
 
     handleSubmit(values) {
-
         fetch(baseUrl + 'login/', {
             method: "POST",
             body: JSON.stringify(values),
@@ -78,7 +91,7 @@ class Login extends Component {
                         <Col sm={8} className=" offset-1 offset-sm-2 col-10">
                             <LocalForm model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="username" sm={3}>Username</Label>
+                                    <Label className="labels" htmlFor="username" sm={3}>Username</Label>
                                     <Col sm={9}>
                                         <Control.text model=".username" id="username" name="username"
                                             placeholder="Username" spellCheck= "false"
@@ -100,9 +113,9 @@ class Login extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="password" sm={3}>Password</Label>
+                                    <Label className="labels" htmlFor="password" sm={3}>Password</Label>
                                     <Col sm={9}>
-                                        <Control.text type="password" model=".password" id="password" name="password" spellCheck= "false"
+                                        <Control.text type={this.state.hide} model=".password" id="password" name="password" spellCheck= "false"
                                             placeholder="Password"
                                             className="form-control"
                                             validators={{
@@ -119,7 +132,11 @@ class Login extends Component {
                                                 maxLength: 'Must be 15 characters or less'
                                             }}
                                         />
+                                        <span className="fa fa-eye hide-icon" onClick={() => this.toggleHide()}></span>
                                     </Col>
+                                </Row>
+                                <Row className="form-group ml-1">
+                                    <div className="reset-password" onClick={() => this.resetPass()}>Forgot Password? click here</div>
                                 </Row>
                                 <Row className="form-group">
                                     <Col sm={{ size: 9, offset: 3 }}>

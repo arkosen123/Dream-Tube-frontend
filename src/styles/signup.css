@@ -68,3 +68,16 @@
 .error {
     color: red;
 }
+
+.hide-icon {
+    font-size: 14px;
+    position: absolute;
+    right: 27px;
+    top: 11px;
+    cursor: pointer;
+}
+
+.text-danger {
+    font-size: 10.5px;
+    padding-left: 7px;
+}

@@ -26,7 +26,7 @@
 }
 
 .login-btn {
-    margin-top: 3vh;
+    margin-top: 1vh;
     width: max(100px,14vw);
     background-color: rgb(70, 134, 172);
     border-color: rgb(66, 134, 173);
@@ -59,4 +59,14 @@
         border-radius: 5px;
     }
     100% {background-color: rgb(240, 214, 101);}
+}
+
+.reset-password {
+    font-size: 9px;
+    color: red;
+    border: 0.4px solid rgb(252, 145, 145);
+    cursor: pointer;
+    padding: 4px 8px;
+    margin-top: 0.5vh;
+    border-radius: 5px;
 }

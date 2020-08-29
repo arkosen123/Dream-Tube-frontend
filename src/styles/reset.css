@@ -1,0 +1,62 @@
+.reset-background {
+    background-image: url('../shared/user-bg.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 87vh;
+}
+
+.reset-display {
+    margin-top: 16vh;
+    width: max(340px, 40vw);
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(186, 248, 230, 0.5);
+    padding: 0px 10px;
+}
+
+.labels {
+    font-weight: 500;
+}
+
+.reset-error {
+    font-size: 9.5px;
+    padding-left: 2vw;
+    color: red;
+}
+
+.reset-btn {
+    width: 110px;
+    height: 37px;
+    border-radius: 10px;
+}
+
+.reset-heading {
+    margin-bottom: 2.5vh;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(99, 13, 13);
+}
+
+.reset-sub-heading {
+    margin-bottom: 2vh;
+    text-align: center;
+    font-weight: 500;
+    color: rgb(41, 104, 69);
+    font-size: 13.5px;
+}
+
+.hide-icon-signup {
+    top: 81px;
+}
+
+.hide-initial {
+    top: 45px;
+}
+
+.hide-confirm {
+    top: 117px;
+}

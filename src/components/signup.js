@@ -17,12 +17,18 @@ class Signup extends Component {
         this.state = {
             redirect: null,
             error: false,
+            hide: "password",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.toggleHide = this.toggleHide.bind(this);
+    }
+
+    toggleHide() {
+        if (this.state.hide === "password") this.setState({ hide: "text" });
+        else this.setState({ hide: "password" });
     }
 
     handleSubmit(values) {
-
         fetch(baseUrl + 'signup/', {
             method: "POST",
             body: JSON.stringify(values),
@@ -54,8 +60,7 @@ class Signup extends Component {
 
     render() {
         if (this.state.redirect) {
-            this.props.changeMessage("Signup successful!..Now just login and get started");
-            //alert("Signup successful!..Now just login and get started");
+            this.props.changeMessage("Signup successful!.. Now just login and get started");
             return <Redirect to={this.state.redirect} />
         }
 
@@ -73,7 +78,7 @@ class Signup extends Component {
                         <Col sm={8} className="offset-sm-2">
                             <LocalForm model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="username" sm={2}>Username</Label>
+                                    <Label className="labels" htmlFor="username" sm={2}>Username</Label>
                                     <Col sm={10}>
                                         <Control.text spellCheck="false" model=".username" id="username" name="username"
                                             placeholder="Username"
@@ -95,9 +100,9 @@ class Signup extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="password" sm={2}>Password</Label>
+                                    <Label className="labels" htmlFor="password" sm={2}>Password</Label>
                                     <Col sm={10}>
-                                        <Control.text type="password" model=".password" id="password" name="password"
+                                        <Control.text type={this.state.hide} model=".password" id="password" name="password"
                                             placeholder="Password"
                                             className="form-control"
                                             validators={{
@@ -115,9 +120,10 @@ class Signup extends Component {
                                             }}
                                         />
                                     </Col>
+                                    <span className="fa fa-eye hide-icon hide-icon-signup" onClick={() => this.toggleHide()}></span>
                                 </Row>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="telnum" sm={2}>Phone No.</Label>
+                                    <Label className="labels" htmlFor="telnum" sm={2}>Phone No.</Label>
                                     <Col sm={10}>
                                         <Control.text model=".telnum" id="telnum" name="telnum"
                                             placeholder="Phone Number"
@@ -139,7 +145,7 @@ class Signup extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="email" sm={2}>Email Id</Label>
+                                    <Label className="labels" htmlFor="email" sm={2}>Email Id</Label>
                                     <Col sm={10}>
                                         <Control.text model=".email" id="email" name="email"
                                             placeholder="Email Id"
@@ -160,7 +166,7 @@ class Signup extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="countryCode" sm={2}>Country Code</Label>
+                                    <Label className="labels" htmlFor="countryCode" sm={2}>Country Code</Label>
                                     <Col sm={10}>
                                         <Control.text model=".countryCode" id="countryCode" name="countryCode"
                                             placeholder="ISO 3166-1 alpha-2 Code like IN"

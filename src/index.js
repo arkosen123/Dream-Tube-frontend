@@ -13,6 +13,7 @@ import './styles/user.css';
 import './styles/footer.css';
 import './styles/card.css';
 import './styles/help.css';
+import './styles/reset.css';
 import './styles/details.css';
 import * as serviceWorker from './serviceWorker';
 

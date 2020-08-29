@@ -121,6 +121,7 @@ class Home extends Component {
 
     handlePlay(id) {
         const url = '/play/' + id;
+        history.push('/home');
         this.setState({ redirect: url });
     }
 
@@ -158,7 +159,6 @@ class Home extends Component {
 
     render() {
         if (this.state.redirect) {
-            history.push('/home');
             return <Redirect to={this.state.redirect} />
         }
 

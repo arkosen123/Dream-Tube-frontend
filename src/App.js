@@ -8,6 +8,7 @@ import Footer from './components/footer';
 import Profile from './components/profile';
 import Popular from './components/popular';
 import Help from './components/help';
+import Reset from './components/reset';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import history from './history';
 import VideoDetails from './components/videoDetails';
@@ -69,10 +70,11 @@ class App extends Component {
             <BrowserRouter>
                 <div className="App">
                     <Switch location={this.props.location} history={history}>
-                        <Route exact path='/user' component={() => <User message={this.state.message}/>} />
+                        <Route exact path='/user' component={() => <User message={this.state.message} changeMessage={(mess) => this.changeMessage(mess)} />} />
                         <Route exact path='/user/signup' component={() => <Signup changeMessage={(mess) => this.changeMessage(mess)} />} />
                         <Route exact path='/user/login' component={() => <Login />} />
                         <Route exact path='/help' component={() => <Help />} />
+                        <Route exact path='/reset' component={() => <Reset changeMessage={(mess) => this.changeMessage(mess)}/>} />
                         <PrivateRoute exact path='/home' component={() => <Home searchParameter={this.state.searchParameter} searched={this.state.searched} input={this.state.input} videoList={this.state.videoList} changeMainState= {(input, videoList, searched, searchParameter) => this.changeMainState(input, videoList, searched, searchParameter)} />} />
                         <PrivateRoute exact path='/play/:id' component={PlayWithId} />
                         <PrivateRoute exact path='/profile' component={() => <Profile />} />

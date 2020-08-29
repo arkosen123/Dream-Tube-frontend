@@ -43,6 +43,7 @@ class Popular extends Component {
 
     handlePlay(id) {
         const url = '/play/' + id;
+        history.push('/trending');
         this.setState({ redirect: url });
     }
 
@@ -117,7 +118,6 @@ class Popular extends Component {
     render() {
 
         if (this.state.redirect) {
-            history.push('/trending');
             return <Redirect to={this.state.redirect} />
         }
 

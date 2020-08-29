@@ -49,6 +49,7 @@ class Profile extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.deleteAccount = this.deleteAccount.bind(this);
         this.changeCheck = this.changeCheck.bind(this);
+        this.changePassword = this.changePassword.bind(this);
     }
 
     changeCheck() {
@@ -181,6 +182,11 @@ class Profile extends Component {
         else this.setState({ editState: null });
     }
 
+    changePassword() {
+        history.push('/profile');
+        this.setState({ redirect: '/reset'});
+    }
+
     deleteAccount() {
         fetch(baseUrl + 'modify/' + this.state.username)
         .then(response => {
@@ -229,17 +235,17 @@ class Profile extends Component {
             .then(response => response.json())
             .then(user => {
                 localStorage.setItem('currentUser', JSON.stringify(user));
+                history.push('/profile');
                 this.setState({ redirect: "/home" })
             })
             .catch(error => {
                 console.log(error);
             });
     }
-
+    
     render() {
-
+        
         if (this.state.redirect) {
-            history.push('/profile');
             return <Redirect to={this.state.redirect} />
         }
 
@@ -250,8 +256,8 @@ class Profile extends Component {
                         <div classname="editStateOne">
                             <LocalForm model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="telnum" sm={2}>Phone No.</Label>
-                                    <Col sm={10}>
+                                    <Label className="labels" htmlFor="telnum" sm={3}>Phone No.</Label>
+                                    <Col sm={9}>
                                         <Control.text model=".telnum" id="telnum" name="telnum"
                                             placeholder="Phone Number"
                                             defaultValue={this.state.user.telnum}
@@ -275,8 +281,8 @@ class Profile extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="email" sm={2}>Email Id</Label>
-                                    <Col sm={10}>
+                                    <Label className="labels" htmlFor="email" sm={3}>Email Id</Label>
+                                    <Col sm={9}>
                                         <Control.text model=".email" id="email" name="email"
                                             placeholder="Email Id"
                                             defaultValue={this.state.user.email}
@@ -297,8 +303,8 @@ class Profile extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group mt-3">
-                                    <Label htmlFor="countryCode" sm={2}>Country Code</Label>
-                                    <Col sm={10}>
+                                    <Label className="labels" htmlFor="countryCode" sm={3}>Country Code</Label>
+                                    <Col sm={9}>
                                         <Control.text model=".countryCode" id="countryCode" name="countryCode"
                                             defaultValue={this.state.user.countryCode}
                                             placeholder="ISO 3166-1 alpha-2 Code like IN"
@@ -321,7 +327,7 @@ class Profile extends Component {
                                     </Col>
                                 </Row>
                                 <Row className="form-group">
-                                    <Col sm={{ size: 10, offset: 2 }}>
+                                    <Col sm={{ size: 9, offset: 3 }}>
                                         <Button className="details-btn" type="submit" color="primary">Edit Details</Button>
                                     </Col>
                                 </Row>
@@ -365,6 +371,7 @@ class Profile extends Component {
                 return (
                     <div className="edit-btn-group">
                         <Button className="edit-btn btn-warning" onClick={() => this.editNormalInfo()}>Edit Details</Button>
+                        <Button className="edit-btn btn-warning" onClick={() => this.changePassword()}>Change Password</Button>
                         <Button className="edit-btn btn-warning" onClick={() => this.editDelete()}>Delete Account</Button>
                     </div>
                 )

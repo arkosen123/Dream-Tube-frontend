@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import history from '../history';
 import baseUrl from '../shared/baseUrl';
 
@@ -10,13 +10,24 @@ class User extends Component {
         this.state = {
             redirect: null,
         }
+        this.handleHelp = this.handleHelp.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleGuest = this.handleGuest.bind(this);
+        this.handleSignup = this.handleSignup.bind(this);
+    }
+
+    handleHelp() {
+        history.push('/user');
+        this.setState({ redirect: '/help' });
     }
 
     handleLogin() {
+        history.push('/user');
         this.setState({ redirect: '/user/login' });
     }
 
     handleSignup() {
+        history.push('/user');
         this.setState({ redirect: '/user/signup' });
     }
 
@@ -51,6 +62,7 @@ class User extends Component {
                     localStorage.setItem('token', user.token);
                     const credential = user.user;
                     localStorage.setItem('currentUser', JSON.stringify(credential));
+                    history.push('/user');
                     this.setState({ redirect: "/home" });
                 }
                 else {
@@ -66,7 +78,7 @@ class User extends Component {
 
     render() {
         if (this.state.redirect) {
-            history.push('/user');
+            this.props.changeMessage(null);
             return <Redirect to={this.state.redirect} />
         }
         return (
@@ -83,7 +95,7 @@ class User extends Component {
                         <Button className="user-button" onClick={() => this.handleGuest()}>Login as Guest</Button>
                     </div>
                     <div className="user-help">
-                        <Link to='/help'><Button className="user-button user-button-help" >Know More</Button></Link>
+                        <Button className="user-button user-button-help" onClick={() => this.handleHelp()} >Know More</Button>
                     </div>
                 </div>
             </div>
