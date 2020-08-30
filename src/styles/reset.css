@@ -52,6 +52,11 @@
 .hide-icon-signup {
     top: 81px;
 }
+@media only screen and (max-width: 575px) {
+    .hide-icon-signup {
+        top: 160px;
+    }
+}
 
 .hide-initial {
     top: 45px;

@@ -61,7 +61,7 @@
     color: white;
     font-size: large;
     animation-name: fading;
-    animation-duration: 10s;
+    animation-duration: 12s;
 }
 
 @keyframes fading {
