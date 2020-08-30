@@ -4,15 +4,6 @@ import Header from './header';
 
 class Play extends Component {
 
-    constructor(props) {
-        super(props);
-        this.viewList = this.viewList.bind(this);
-    }
-
-    viewList() {
-        console.log('1');
-    }
-
     render() {
         const opts = {
             height: '420',
@@ -27,7 +18,7 @@ class Play extends Component {
             <div>
                 <Header></Header>
                 <div className="play popular-list">
-                    <YouTube className="video" videoId={this.props.id} opts={opts} onReady={() => this.viewList()} />
+                    <YouTube className="video" videoId={this.props.id} opts={opts} />
                 </div>
             </div>
         )

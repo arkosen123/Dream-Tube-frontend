@@ -53,7 +53,7 @@ class Reset extends Component {
             .then(response => response.json())
             .then(response => {
                 if (response.exists === true) {
-                    this.setState({ show: 1, user: response.user }, () => console.log(this.state.user));
+                    this.setState({ show: 1, user: response.user });
                 }
                 else this.setState({ error: true });
             })
